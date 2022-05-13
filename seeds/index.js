@@ -3,8 +3,7 @@ const seedHelpers = require('./seedHelpers');
 const cities = require('./cities');
 const Campground = require('../models/campground')
 
-const dbUrl = 'mongodb+srv://garyho0916:GOIw7RooAR3wCPb2@cluster0.bnpjs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-//const dbUrl = process.env.MONGO_ALTAS_URL;
+const dbUrl = process.env.MONGO_ALTAS_URL;
 mongoose.connect(dbUrl);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connetion error:"));
