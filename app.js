@@ -94,6 +94,8 @@ app.use(
     })
 );
 
+const secret = process.env.SECRET || 'thisshouldbeablettersecret'
+
 app.use(express.urlencoded({ extended: true }));
 app.use(methodoverride('_method'));
 app.use(express.static(__dirname + '/public'))
@@ -103,7 +105,7 @@ app.use(sanitize());
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
-    secret: 'thisshouldbeablettersecret',
+    secret,
     touchAfter: 24 * 60 *60
 });
 
@@ -114,7 +116,7 @@ store.on("error", function(e){
 const sessionConfig = {
     store,
     name: 'session',
-    secret: 'thisshouldbeablettersecret',
+    secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
