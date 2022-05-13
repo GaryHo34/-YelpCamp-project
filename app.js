@@ -23,9 +23,7 @@ const userRoutes = require('./routes/users');
 const MongoStore = require('connect-mongo');
 
 const dbUrl = process.env.MONGO_ALTAS_URL || 'mongodb://localhost:27017/yelp-camp';
-//const dbUrl = process.env.MONGO_ALTAS_URL;
 mongoose.connect(dbUrl);
-//mongoose.connect(dbUrl);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connetion error:"));
 db.once("open", () => {
@@ -38,7 +36,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 app.engine('ejs', ejsMate);
 
-
+const cloudinaryUser = process.env.CLOUDINARY_CLOUD_NAME || 'USER'
 
 const scriptSrcUrls = [
     "https://stackpath.bootstrapcdn.com/",
@@ -47,7 +45,7 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com/",
     "https://cdnjs.cloudflare.com/",
     "https://cdn.jsdelivr.net/",
-    "https://res.cloudinary.com/dnclrdwpp/"
+    `https://res.cloudinary.com/${cloudinaryUser}/`
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
@@ -57,15 +55,15 @@ const styleSrcUrls = [
     "https://fonts.googleapis.com/",
     "https://use.fontawesome.com/",
     "https://cdn.jsdelivr.net/",
-    "https://res.cloudinary.com/dnclrdwpp/"
+    `https://res.cloudinary.com/${cloudinaryUser}/`
 ];
 const connectSrcUrls = [
     "https://*.tiles.mapbox.com",
     "https://api.mapbox.com",
     "https://events.mapbox.com",
-    "https://res.cloudinary.com/dnclrdwpp/"
+    `https://res.cloudinary.com/${cloudinaryUser}/`
 ];
-const fontSrcUrls = [ "https://res.cloudinary.com/dnclrdwpp/" ];
+const fontSrcUrls = [ `https://res.cloudinary.com/${cloudinaryUser}/` ];
  
 app.use(
     helmet({
@@ -81,12 +79,12 @@ app.use(
                     "'self'",
                     "blob:",
                     "data:",
-                    "https://res.cloudinary.com/dnclrdwpp/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+                    `https://res.cloudinary.com/${cloudinaryUser}/`, //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
                     "https://images.unsplash.com/",
                     "https://source.unsplash.com/collection/"
                 ],
                 fontSrc    : [ "'self'", ...fontSrcUrls ],
-                mediaSrc   : [ "https://res.cloudinary.com/dnclrdwpp/" ],
+                mediaSrc   : [ `https://res.cloudinary.com/${cloudinaryUser}/` ],
                 childSrc   : [ "blob:" ]
             }
         },
