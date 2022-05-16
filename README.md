@@ -1,6 +1,7 @@
 # Yelp-Camp project
 
 A Node.js web application project from the Udemy course - [The Web Developer Bootcamp 2022] by _Colt Steele_
+
 Yelp-Camp is a clone of yelp to let user create, update, delete and leave comment, based on:
 - Node.js & NoSQL
 
