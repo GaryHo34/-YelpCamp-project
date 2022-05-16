@@ -50,6 +50,7 @@ const scriptSrcUrls = [
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
     "https://stackpath.bootstrapcdn.com/",
+    "https://netdna.bootstrapcdn.com/font-awesome/",
     "https://api.mapbox.com/",
     "https://api.tiles.mapbox.com/",
     "https://fonts.googleapis.com/",
@@ -63,7 +64,7 @@ const connectSrcUrls = [
     "https://events.mapbox.com",
     `https://res.cloudinary.com/${cloudinaryUser}/`
 ];
-const fontSrcUrls = [ `https://res.cloudinary.com/${cloudinaryUser}/` ];
+const fontSrcUrls = [ `https://res.cloudinary.com/${cloudinaryUser}/`,"https://netdna.bootstrapcdn.com/font-awesome/" ];
  
 app.use(
     helmet({
@@ -81,7 +82,8 @@ app.use(
                     "data:",
                     `https://res.cloudinary.com/${cloudinaryUser}/`, //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
                     "https://images.unsplash.com/",
-                    "https://source.unsplash.com/collection/"
+                    "https://source.unsplash.com/collection/",
+                    "https://netdna.bootstrapcdn.com/font-awesome/"
                 ],
                 fontSrc    : [ "'self'", ...fontSrcUrls ],
                 mediaSrc   : [ `https://res.cloudinary.com/${cloudinaryUser}/` ],

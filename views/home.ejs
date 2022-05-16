@@ -7,6 +7,7 @@
     <title>YelpCamp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="shortcut icon" href="#">
 </head>
@@ -20,11 +21,11 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="/campgrounds">Campgrounds</a>
                     <% if(!currentUser) { %>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
-                    <% } else { %>
-                    <a class="nav-link" href="/logout">Logout</a>
-                    <% } %>
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/register">Register</a>
+                        <% } else { %>
+                            <a class="nav-link" href="/logout">Logout</a>
+                            <% } %>
                 </nav>
             </div>
         </header>
@@ -36,9 +37,15 @@
                 Campgrounds</a>
         </main>
 
-        <footer class="mt-auto text-white-50">
-            <p>&copy; 2022 </p>
+        <footer class="  mt-auto text-white-50">
+            <div class="mb-3">
+                <a class="nav-link d-inline" href="https://www.linkedin.com/in/garyho-210839/"><i class="icon-linkedin-sign icon-2x"></i> </a>
+                <a class="nav-link d-inline" href="https://github.com/GaryHo34/YelpCamp-project"><i class="icon-github-sign icon-2x"></i> </a>
+            </div>
+            <div class="mb-3">
+                <span>The Web Developer Bootcamp 2022</span></div>
         </footer>
+
 
 
     </div>
