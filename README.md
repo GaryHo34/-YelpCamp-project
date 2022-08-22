@@ -26,7 +26,7 @@ https://garyho34.herokuapp.com/
 - ejs
 - express
 - express-session
-- mongoosea
+- mongoose
 - async / await
 - crypto
 - helmet
